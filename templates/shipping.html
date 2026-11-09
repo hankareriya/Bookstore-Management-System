@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Details</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/books">Manage Books</a></li>
+            <li><a href="/categories">Manage Categories</a></li>
+            <li><a href="/customers">Manage Customers</a></li>
+            <li><a href="/orders">Manage Orders</a></li>
+            <li><a href="/reviews">Customer Reviews</a></li>
+            <li><a href="/shipping">Shipping Details</a></li>
+        </ul>
+    </div>
+
+    <div class="shipping-container">
+        <h1>Shipping Details</h1>
+
+        <!-- Shipping Form -->
+        <form action="/shipping" method="POST" class="form">
+            <select name="order_id" required>
+                <option value="" disabled selected>Select Order</option>
+                {% for order in orders %}
+                <option value="{{ order[0] }}">{{ order[0] }} ({{ order[1] }})</option>
+                {% endfor %}
+            </select>
+            <input type="text" name="shipping_id" placeholder="Shipping ID" required>
+            <input type="date" name="shipping_date" placeholder="Shipping Date" required>
+            <input type="date" name="delivery_date" placeholder="Delivery Date" required>
+            <textarea name="shipping_address" placeholder="Shipping Address" required></textarea>
+            <button type="submit" class="btn">Add Shipping Details</button>
+        </form>
+
+        <!-- Display Shipping Details -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Shipping ID</th>
+                    <th>Order ID</th>
+                    <th>Shipping Date</th>
+                    <th>Delivery Date</th>
+                    <th>Shipping Address</th>
+                    <th>Order Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for shipping in shippings %}
+                <tr>
+                    <td>{{ shipping[0] }}</td> <!-- Shipping ID -->
+                    <td>{{ shipping[1] }}</td> <!-- Order ID -->
+                    <td>{{ shipping[2] }}</td> <!-- Shipping Date -->
+                    <td>{{ shipping[3] }}</td> <!-- Delivery Date -->
+                    <td>{{ shipping[4] }}</td> <!-- Shipping Address -->
+                    <td>{{ shipping[5] }}</td> <!-- Order Date -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

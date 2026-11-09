@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/books">Manage Books</a></li>
+            <li><a href="/categories">Manage Categories</a></li>
+            <li><a href="/customers">Manage Customers</a></li>
+            <li><a href="/orders">Manage Orders</a></li>
+            <li><a href="/reviews">Customer Reviews</a></li>
+            <li><a href="/shipping">Shipping Details</a></li>
+        </ul>
+    </div>
+
+    <div class="review-container">
+        <h1>Customer Reviews</h1>
+        
+        <!-- Review Form -->
+        <form action="/reviews" method="POST" class="form">
+            <select name="customer_id" required>
+                <option value="" disabled selected>Select Customer</option>
+                {% for customer in customers %}
+                <option value="{{ customer[0] }}">{{ customer[1] }}</option>
+                {% endfor %}
+            </select>
+
+            <select name="book_id" required>
+                <option value="" disabled selected>Select Book</option>
+                {% for book in books %}
+                <option value="{{ book[0] }}">{{ book[1] }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="number" name="rating" min="1" max="5" placeholder="Rating (1-5)" required>
+            <textarea name="comments" placeholder="Write your review here..." required></textarea>
+            <input type="date" name="review_date" required>
+
+            <button type="submit" class="btn">Submit Review</button>
+        </form>
+
+        <!-- Display Reviews -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Book</th>
+                    <th>Rating</th>
+                    <th>Comments</th>
+                    <th>Review Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in reviews %}
+                <tr>
+                    <td>{{ review.customer_name }}</td> <!-- Corrected Customer Name -->
+                    <td>{{ review.book_name }}</td> <!-- Corrected Book Name -->
+                    <td>{{ review.rating }}</td> <!-- Rating -->
+                    <td>{{ review.comments }}</td> <!-- Comments -->
+                    <td>{{ review.review_date }}</td> <!-- Review Date -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

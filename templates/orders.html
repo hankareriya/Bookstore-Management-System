@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Orders</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/books">Manage Books</a></li>
+            <li><a href="/categories">Manage Categories</a></li>
+            <li><a href="/customers">Manage Customers</a></li>
+            <li><a href="/orders">Manage Orders</a></li>
+            <li><a href="/reviews">Customer Reviews</a></li>
+            <li><a href="/shipping">Shipping Details</a></li>
+        </ul>
+    </div>
+    <h1>Order Management</h1>
+    <form action="/add_order" method="post" class="form">
+        <select name="customer_id" required>
+            <option value="" disabled selected>Select Customer</option>
+            {% for customer in customers %}
+            <option value="{{ customer[0] }}">{{ customer[1] }}</option>
+            {% endfor %}
+        </select>
+        <select name="book_id" required>
+            <option value="" disabled selected>Select Book</option>
+            {% for book in books %}
+            <option value="{{ book[0] }}">{{ book[1] }}</option>
+            {% endfor %}
+        </select>
+        <input type="date" name="order_date" required>
+        <button type="submit" class="btn">Add Order</button>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer ID</th>
+                <th>Book ID</th>
+                <th>Order Date</th>
+                <th>Total Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order[0] }}</td>
+                <td>{{ order[1] }}</td>
+                <td>{{ order[2] }}</td>
+                <td>{{ order[3] }}</td>
+                <td>{{ order[4] }}</td>
+                <td><a href="/delete_order/{{ order[0] }}" class="delete-btn">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

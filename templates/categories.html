@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Categories</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/books">Manage Books</a></li>
+            <li><a href="/categories">Manage Categories</a></li>
+            <li><a href="/customers">Manage Customers</a></li>
+            <li><a href="/orders">Manage Orders</a></li>
+            <li><a href="/reviews">Customer Reviews</a></li>
+            <li><a href="/shipping">Shipping Details</a></li>
+        </ul>
+    </div>
+    <h1>Category Management</h1>
+    <form action="/add_category" method="post" class="form">
+        <select name="book_id" required>
+            <option value="" disabled selected>Select Book</option>
+            {% for book in books %}
+            <option value="{{ book[0] }}">{{ book[1] }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="category_name" placeholder="Category Name" required>
+        <button type="submit" class="btn">Add Category</button>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book ID</th>
+                <th>Category Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %}
+            <tr>
+                <td>{{ category[0] }}</td>
+                <td>{{ category[1] }}</td>
+                <td>{{ category[2] }}</td>
+                <td><a href="/delete_category/{{ category[0] }}" class="delete-btn">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

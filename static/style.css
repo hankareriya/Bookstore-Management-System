@@ -1,0 +1,210 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.navbar {
+    background-color: #333537;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #333537;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color:  #333537;
+}
+
+.form {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.form input,
+.form select {
+    padding: 10px;
+    margin: 5px;
+    width: 300px;
+}
+
+.form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #218838;
+}
+
+.table {
+    margin: 20px auto;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.table th {
+    background-color:  #333537;
+    color: white;
+}
+
+.table td .delete-btn {
+    text-decoration: none;
+    color: white;
+    background-color: #dc3545;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.table td .delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+
+.index-container {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.index-container h1 {
+    font-size: 3rem;
+    color:  #333537;
+    margin-bottom: 20px;
+}
+
+.index-container p {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.index-container a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    color: white;
+    background-color: #28a745;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.index-container a:hover {
+    background-color: #218838;
+}
+
+/* Additional Styles for Reviews */
+.review-container {
+    margin: 30px auto;
+    width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-container h1 {
+    text-align: center;
+    color:  #333537;
+    margin-bottom: 20px;
+}
+
+.review-container .form select,
+.review-container .form input,
+.review-container .form textarea {
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.review-container .form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-container .form button:hover {
+    background-color: #218838;
+}
+
+.review-container .table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.review-container .table th,
+.review-container .table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.review-container .table th {
+    background-color:  #333537;
+    color: white;
+}
+
+.review-container .table td {
+    background-color: #f9f9f9;
+}
+
+.review-container .table td:hover {
+    background-color: #f1f1f1;
+}
+
+.review-container .table td .delete-btn {
+    text-decoration: none;
+    color: white;
+    background-color: #dc3545;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.review-container .table td .delete-btn:hover {
+    background-color: #c82333;
+}
