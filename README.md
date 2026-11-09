@@ -1,4 +1,4 @@
-# 📚 Bookstore Management System
+#  Bookstore Management System
 
 A web-based Bookstore Management System developed using Python Flask and MySQL to simplify bookstore operations, including inventory management, customer records, and order processing.
 
@@ -105,9 +105,3 @@ The Entity Relationship (ER) Diagram illustrates the database structure and rela
 - Designing normalized database schemas.
 - Writing SQL queries for data retrieval and reporting.
 - Integrating Python applications with relational databases.
-
-## Author
-
-**Riya Hankare**
-
-GitHub: [hankareriya](https://github.com/hankareriya)
