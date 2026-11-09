@@ -20,6 +20,7 @@ Tech Stack
 
 Project Structure
 
+## Project Structure
 DBMS-project/
 │
 ├── static/
@@ -33,7 +34,8 @@ DBMS-project/
 │
 ├── app.py
 │
-├── ER DIAGRAM
+└── ER DIAGRAM
+```
 
 Installation and Setup
 
