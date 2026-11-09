@@ -34,8 +34,6 @@ DBMS-project/
 ├── app.py
 │
 ├── ER DIAGRAM
-│
-└── README.md
 
 Installation and Setup
 
